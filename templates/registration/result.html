@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Additional Custom Styles */
+        body {
+            padding: 20px;
+            background-image: url('/media/homepag12.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: black; /* Text color on the background image */
+        }
+
+        .container {
+            max-width: 600px;
+        }
+
+        .logout-link {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <a class="logout-link" href="{% url 'logout' %}">Logout</a>
+    <div class="container">
+        <h1 class="mt-5">Result</h1>
+        <div class="mt-4">
+            <h2>Uploaded Image:</h2>
+            <img src="{{ uploaded_image.url }}" alt="Uploaded Image" class="img-fluid">
+        </div>
+        <div class="mt-4">
+            <h2>Extracted Text:</h2>
+            <p>{{ extracted_text }}</p>
+        </div>
+        <div class="mt-4">
+            <h2>Quantity:</h2>
+            <p>{{ quantity }}</p>
+        </div>
+        <div class="mt-4">
+            <h2>Carbon Credit Points:</h2>
+            <p>{{ carbon_credits }}</p>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js scripts (for Bootstrap functionality) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
