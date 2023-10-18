@@ -30,6 +30,15 @@ class CarbonCreditForm(forms.Form):
     credits = forms.IntegerField()
     # Add more form fields corresponding to your model fields
 
+from django import forms
+from .models import UploadedImage
+
+class ImageUploadForm(forms.ModelForm):
+    class Meta:
+        model = UploadedImage
+        fields = ['image']
+
+
 
 
 

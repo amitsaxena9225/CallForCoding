@@ -4,58 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Result</title>
-    <!-- Add Bootstrap CSS link -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Sign Up</title>
     <style>
-        /* Additional Custom Styles */
         body {
-            padding: 20px;
-            background-image: url('/media/homepag12.jpg');
+            font-family: Arial, sans-serif;
+            background-image: url('/media/best.jpg');
             background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            color: black; /* Text color on the background image */
+            background-position: center;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 90vh;
+            margin: 10vh;
         }
 
-        .container {
-            max-width: 600px;
+        .signup-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 100px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-left: 0px;
+            width: 20%;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .input-group input[type="text"],
+        .input-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .signup-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .signup-btn:hover {
+            background-color: #45a049;
         }
 
         .logout-link {
-            position: fixed;
+            position: absolute;
             top: 20px;
             right: 20px;
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .signup-container p {
+            color: black; /* Change text color for all paragraphs */
         }
     </style>
 </head>
 
 <body>
-    <a class="logout-link" href="{% url 'logout' %}">Logout</a>
-    <div class="container">
-        <h1 class="mt-5">Result</h1>
+    <a class="logout-link" href="/signup">Logout</a>
+    <div class="signup-container">
+        <h1>Result</h1>
         <div class="mt-4">
-            <h2>Uploaded Image:</h2>
-            <img src="{{ uploaded_image.url }}" alt="Uploaded Image" class="img-fluid">
+            <h2>Uploaded Image</h2>
+            <img src="{{ uploaded_image.url }}" alt="Uploaded Image">
+        </div>
+        <div class="mt-5">
+            <h2>Extracted Text</h2>
+            <p>PAPER</p> <!-- change extracted_text -->
         </div>
         <div class="mt-4">
-            <h2>Extracted Text:</h2>
-            <p>{{ extracted_text }}</p>
+            <h2>Quantity</h2>
+            <p>2 kg</p> <!-- change extracted_text -->
         </div>
         <div class="mt-4">
-            <h2>Quantity:</h2>
-            <p>{{ quantity }}</p>
+            <h2>User Carbon Credit Points</h2>
+            <p>125 credits</p> <!-- change extracted_text -->
         </div>
         <div class="mt-4">
-            <h2>Carbon Credit Points:</h2>
-            <p>{{ carbon_credits }}</p>
+            <button class="signup-btn" onclick="window.location.href='/user_trade'">User Trade</button>
+        </div>
+
+        <!-- Google Maps link -->
+        <div class="mt-4">
+            <h2>Location</h2>
+            <a href="https://www.google.com/maps/place/Your+Location+Here" target="_blank">View on Google Maps</a>
         </div>
     </div>
-
-    <!-- Add Bootstrap JS and Popper.js scripts (for Bootstrap functionality) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

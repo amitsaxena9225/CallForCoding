@@ -103,13 +103,22 @@ def home(request):
     return render(request, 'registration/home.html')
 
 
+from .forms import ImageUploadForm
+
 def upload_image(request):
-    # Handle image upload logic here
-    # ...
-    a ="AMIT"
-    b = "SAXENA"
-    c = a + b
-    return redirect('calculate')
+    if request.method == 'POST':
+        form = ImageUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            # Save the uploaded image
+            uploaded_image = form.save()
+            # Perform any additional logic with the uploaded image
+            # ...
+            return redirect('calculate')
+    else:
+        form = ImageUploadForm()
+
+    return render(request, 'registration/home.html', {'form': form})
+
 
 
 # views.py
@@ -135,12 +144,11 @@ def calculate(request):
                 waste_data[waste_type] = quantity
                 emissions = emission_factor * quantity
                 total_emissions += emissions
-
             return render(request, 'registration/result.html', {'waste_data': waste_data, 'total_emissions': total_emissions})
     else:
         form = WasteDataForm()
 
-    return render(request, 'registration/input_form.html', {'form': form})
+    return render(request, 'registration/result.html', {'form': form})
 
 
 def calculate_credit(request):
@@ -217,6 +225,11 @@ def user_profile(request):
     }
 
     return render(request, 'registration/user_profile.html', user_carbon_credits)
+
+
+def user_trade(request):
+    return render(request, 'registration/upload.html')
+
 
 
 

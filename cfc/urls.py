@@ -15,7 +15,7 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     path('calculate/', views.calculate, name='calculate'),
     path('user_carbon_credits/', views.user_carbon_credits, name='user_carbon_credits'),
-    path('predict_class/', views.predict_class, name='waste-predict_class'),
+    path('user_trade/', views.user_trade, name='user_trade'),
     path('profile/', views.user_profile, name='user_profile'),
 
 ]

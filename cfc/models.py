@@ -31,3 +31,10 @@ class CarbonCredit(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     credits = models.IntegerField(default=0)
     # Add more fields as needed, such as the date when credits were earned, source of credits, etc.
+
+
+from django.db import models
+
+class UploadedImage(models.Model):
+    image = models.ImageField(upload_to='uploads/')
+    # Add any additional fields you need
