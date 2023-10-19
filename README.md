@@ -27,6 +27,8 @@ Predictions assist in waste categorization and emission calculations.
 
 **Project Structure**
 The project structure is organized as follows:
+![image](https://github.com/amitsaxena9225/CallForCoding/assets/32059302/99db3355-0685-45c9-a041-d96b77f3db26)
+
 ```
 ![image](https://github.com/amitsaxena9225/CallForCoding/assets/32059302/fb3aa11c-209f-49d6-b218-998e882579e2)
 
