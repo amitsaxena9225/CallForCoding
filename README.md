@@ -28,6 +28,8 @@ Predictions assist in waste categorization and emission calculations.
 **Project Structure**
 The project structure is organized as follows:
 ```
+![image](https://github.com/amitsaxena9225/CallForCoding/assets/32059302/fb3aa11c-209f-49d6-b218-998e882579e2)
+
 sustainable-living-platform/
 ├── cfc/
 │   ├── __init__.py
