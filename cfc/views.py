@@ -254,7 +254,7 @@ def user_profile(request):
 
 
 def user_trade(request):
-    return render(request, 'registration/home.html')
+    return render(request, 'registration/upload.html')
 
 def success_template(request):
     return render(request, 'registration/success_template.html')

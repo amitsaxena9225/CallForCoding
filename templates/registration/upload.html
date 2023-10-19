@@ -41,12 +41,29 @@
         }
 
         th {
-            background-color: #e50914;
+            background-color: #4caf50; /* Green color */
             color: #fff;
         }
 
         tr:nth-child(even) {
             background-color: #f2f2f2;
+        }
+
+        /* Netflix style buttons */
+        .button {
+            background-color: #4caf50; /* Green color */
+            color: #fff;
+            border: none;
+            padding: 20px 40px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 30px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #45a049; /* Darker green color */
         }
     </style>
 </head>
@@ -102,7 +119,23 @@
                 </tr>
             </tbody>
         </table>
+
+        <!-- Buy and Sell buttons -->
+        <button class="button" onclick="buyCredit()">Buy</button>
+        <button class="button" onclick="sellCredit()">Sell</button>
     </div>
+
+    <script>
+        function buyCredit() {
+            // Logic for buying credits
+            alert('Buy credits');
+        }
+
+        function sellCredit() {
+            // Logic for selling credits
+            alert('Sell credits');
+        }
+    </script>
 </body>
 
 </html>
